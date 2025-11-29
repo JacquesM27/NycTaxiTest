@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "holidays_provider", "holidays_provider\holidays_provider.csproj", "{81D51A15-A0A1-42CC-9AF8-60DB0F3E52BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81D51A15-A0A1-42CC-9AF8-60DB0F3E52BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81D51A15-A0A1-42CC-9AF8-60DB0F3E52BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81D51A15-A0A1-42CC-9AF8-60DB0F3E52BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81D51A15-A0A1-42CC-9AF8-60DB0F3E52BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
