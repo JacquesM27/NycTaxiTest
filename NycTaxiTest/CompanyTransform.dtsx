@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="CompanyTransform"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{637B1B30-35CF-4472-8FE6-B8115D3482A2}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{95A56759-1C17-4780-BB9F-15C254DF3A5E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -208,6 +208,42 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.NycTaxi]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{095F3D99-513C-47D4-A36B-1B2949A3CAAC}"
+      DTS:ObjectName="ITMPL5CG2023VDC\IDH.NycTaxi">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ITMPL5CG2023VDC\IDH;Initial Catalog=NycTaxi;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-CompanyTransform-{095F3D99-513C-47D4-A36B-1B2949A3CAAC}ITMPL5CG2023VDC\IDH.NycTaxi;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.test]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E9BE3131-D6CE-43F5-AA9B-860A5C2A450B}"
+      DTS:ObjectName="ITMPL5CG2023VDC\IDH.test">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ITMPL5CG2023VDC\IDH;Initial Catalog=test;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-CompanyTransform-{E9BE3131-D6CE-43F5-AA9B-860A5C2A450B}ITMPL5CG2023VDC\IDH.test;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.test 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6A75103B-8113-4D23-B173-21B03F8EE1C9}"
+      DTS:ObjectName="ITMPL5CG2023VDC\IDH.test 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ITMPL5CG2023VDC\IDH;Initial Catalog=test;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-CompanyTransform-{6A75103B-8113-4D23-B173-21B03F8EE1C9}ITMPL5CG2023VDC\IDH.test 1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[JAKUB\LOCAL.NycTaxi]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{D2C54B64-901E-4D9E-A0CF-2D69445F8AA5}"
@@ -306,8 +342,8 @@
               <connections>
                 <connection
                   refId="Package\Company Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[JAKUB\LOCAL.NycTaxi]"
-                  connectionManagerRefId="Package.ConnectionManagers[JAKUB\LOCAL.NycTaxi]"
+                  connectionManagerID="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.NycTaxi]"
+                  connectionManagerRefId="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.NycTaxi]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -415,8 +451,8 @@
               <connections>
                 <connection
                   refId="Package\Company Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[JAKUB\LOCAL.NycTaxi]"
-                  connectionManagerRefId="Package.ConnectionManagers[JAKUB\LOCAL.NycTaxi]"
+                  connectionManagerID="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.NycTaxi]"
+                  connectionManagerRefId="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.NycTaxi]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -495,9 +531,9 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="205,42"
+          Size="204.8,41.6"
           Id="Package\Company Data Flow Task"
-          TopLeft="185,66" />
+          TopLeft="186.666666575604,67.7333333212799" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -507,13 +543,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="157,42"
-          Id="Package\Company Data Flow Task\OLE DB Source"
-          TopLeft="169,62" />
-        <NodeLayout
-          Size="177,42"
+          Size="176.8,41.6"
           Id="Package\Company Data Flow Task\OLE DB Destination"
           TopLeft="162,164" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Company Data Flow Task\OLE DB Source"
+          TopLeft="169,62" />
         <EdgeLayout
           Id="Package\Company Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="249,104">
@@ -540,7 +576,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Company Data Flow Task\OLE DB Source">
+    design-time-name="Package\Company Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -553,7 +589,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Company Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Company Data Flow Task\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
