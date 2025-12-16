@@ -11,11 +11,23 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="CompanyTransform"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{637B1B30-35CF-4472-8FE6-B8115D3482A2}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{A22B78EE-1644-4F2B-B361-395ECA8B332D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{28424FE2-07C8-4B34-BECB-8CD6DDCF356E}"
+      DTS:ObjectName="ARTURO\MARTYNA.NycTaxi">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ARTURO\MARTYNA;Initial Catalog=NycTaxi;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-CompanyTransform-{28424FE2-07C8-4B34-BECB-8CD6DDCF356E}ARTURO\MARTYNA.NycTaxi;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[flat_file_nyc_25_01]"
       DTS:CreationName="FLATFILE"
@@ -216,7 +228,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=JAKUB\LOCAL;Initial Catalog=NycTaxi;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{D2C54B64-901E-4D9E-A0CF-2D69445F8AA5}JAKUB\LOCAL.NycTaxi;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=Arturo\MARTYNA;Initial Catalog=NycTaxi;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{D2C54B64-901E-4D9E-A0CF-2D69445F8AA5}JAKUB\LOCAL.NycTaxi;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -306,8 +318,8 @@
               <connections>
                 <connection
                   refId="Package\Company Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[JAKUB\LOCAL.NycTaxi]"
-                  connectionManagerRefId="Package.ConnectionManagers[JAKUB\LOCAL.NycTaxi]"
+                  connectionManagerID="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
+                  connectionManagerRefId="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -389,7 +401,10 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT VendorId AS CompanyNumber FROM dbo.Staging_NYCTaxi</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT
+    VendorID AS CompanyNumber
+FROM dbo.Staging_NYCTaxi
+WHERE VendorID IS NOT NULL;</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -415,8 +430,8 @@
               <connections>
                 <connection
                   refId="Package\Company Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[JAKUB\LOCAL.NycTaxi]"
-                  connectionManagerRefId="Package.ConnectionManagers[JAKUB\LOCAL.NycTaxi]"
+                  connectionManagerID="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
+                  connectionManagerRefId="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -495,7 +510,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="205,42"
+          Size="204.8,41.6"
           Id="Package\Company Data Flow Task"
           TopLeft="185,66" />
       </GraphLayout>
@@ -507,13 +522,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="157,42"
-          Id="Package\Company Data Flow Task\OLE DB Source"
-          TopLeft="169,62" />
-        <NodeLayout
-          Size="177,42"
+          Size="176.8,41.6"
           Id="Package\Company Data Flow Task\OLE DB Destination"
           TopLeft="162,164" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Company Data Flow Task\OLE DB Source"
+          TopLeft="169,62" />
         <EdgeLayout
           Id="Package\Company Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="249,104">
@@ -540,7 +555,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Company Data Flow Task\OLE DB Source">
+    design-time-name="Package\Company Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -553,7 +568,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Company Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Company Data Flow Task\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
