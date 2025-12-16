@@ -1,31 +1,31 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="12/14/2025 8:53:09 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="ARTURO"
   DTS:CreatorName="ARTURO\Arturo"
-  DTS:DTSID="{CA638861-8BAC-4CF4-A670-C562B3FBC269}"
+  DTS:DTSID="{9415DB5D-59AC-415D-A4B5-7D896EA3FD58}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1008.3"
   DTS:LocaleID="1045"
   DTS:ObjectName="PaymentMethodTransform"
   DTS:PackageType="5"
   DTS:VersionBuild="8"
-  DTS:VersionGUID="{FCFE8DA6-A869-4D19-BAED-AF6EA2CF3B64}">
+  DTS:VersionGUID="{647EC551-3689-4CA0-B6B0-B577E643528C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{8BA9BA90-2C7D-4EA0-BAC3-4F6222C2D524}"
+      DTS:DTSID="{1A89E4FC-BE12-4F29-A029-F927F1085E87}"
       DTS:ObjectName="ARTURO\MARTYNA.NycTaxi">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=Arturo\MARTYNA;Initial Catalog=NycTaxi;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-PaymentMethodTransform-{8BA9BA90-2C7D-4EA0-BAC3-4F6222C2D524}ARTURO\MARTYNA.NycTaxi;" />
+          DTS:ConnectionString="Data Source=Arturo\MARTYNA;Initial Catalog=NycTaxi;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-PaymentMethodTransform-{1A89E4FC-BE12-4F29-A029-F927F1085E87}ARTURO\MARTYNA.NycTaxi;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -35,7 +35,7 @@
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{79C801C1-41A4-4CDA-9916-0EA19DD80BD3}"
+      DTS:DTSID="{DD15C43D-8FA6-4B42-B637-BB080771E188}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow Task">

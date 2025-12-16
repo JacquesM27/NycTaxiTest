@@ -1,43 +1,43 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/25/2025 5:25:57 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="JAKUB"
   DTS:CreatorName="JAKUB\jakmi"
-  DTS:DTSID="{FE07D4AE-4919-4A12-BB6B-3951AE7524EC}"
+  DTS:DTSID="{ACA8A597-0CB6-48ED-BE36-1C5AA58D826A}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1008.3"
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:VersionBuild="5"
-  DTS:VersionGUID="{8D23D7FC-D174-4793-BD82-6DFD3283B106}">
+  DTS:VersionGUID="{F4BE8492-9959-4424-B2CA-905D8C36E801}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{0F66C6AA-354B-4B84-9AAE-E1DB424C1AD6}"
+      DTS:DTSID="{D69C02FC-6239-49BE-AB0A-EDCC9F935EDC}"
       DTS:ObjectName="ARTURO\MARTYNA.NycTaxi">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ARTURO\MARTYNA;Initial Catalog=NycTaxi;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{0F66C6AA-354B-4B84-9AAE-E1DB424C1AD6}ARTURO\MARTYNA.NycTaxi;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ARTURO\MARTYNA;Initial Catalog=NycTaxi;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{D69C02FC-6239-49BE-AB0A-EDCC9F935EDC}ARTURO\MARTYNA.NycTaxi;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[JAKUB\LOCAL.NycTaxi]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{E5ABE6E3-3BFE-4DF2-99CA-42239A71E4E9}"
+      DTS:DTSID="{C49E064B-965F-4DE0-95A1-B5DCFB1EAED5}"
       DTS:ObjectName="JAKUB\LOCAL.NycTaxi">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=Arturo\MARTYNA;Initial Catalog=NycTaxi;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{E5ABE6E3-3BFE-4DF2-99CA-42239A71E4E9}JAKUB\LOCAL.NycTaxi;" />
+          DTS:ConnectionString="Data Source=Arturo\MARTYNA;Initial Catalog=NycTaxi;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{C49E064B-965F-4DE0-95A1-B5DCFB1EAED5}JAKUB\LOCAL.NycTaxi;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -47,7 +47,7 @@
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{DA980FE9-1286-41EF-BEA8-A694C7D6C5A6}"
+      DTS:DTSID="{F8EBB2C6-2971-4FC6-9A35-DAA1A596777D}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow Task"
