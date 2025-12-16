@@ -220,6 +220,42 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.NycTaxi]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{095F3D99-513C-47D4-A36B-1B2949A3CAAC}"
+      DTS:ObjectName="ITMPL5CG2023VDC\IDH.NycTaxi">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ITMPL5CG2023VDC\IDH;Initial Catalog=NycTaxi;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-CompanyTransform-{095F3D99-513C-47D4-A36B-1B2949A3CAAC}ITMPL5CG2023VDC\IDH.NycTaxi;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.test]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E9BE3131-D6CE-43F5-AA9B-860A5C2A450B}"
+      DTS:ObjectName="ITMPL5CG2023VDC\IDH.test">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ITMPL5CG2023VDC\IDH;Initial Catalog=test;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-CompanyTransform-{E9BE3131-D6CE-43F5-AA9B-860A5C2A450B}ITMPL5CG2023VDC\IDH.test;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.test 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6A75103B-8113-4D23-B173-21B03F8EE1C9}"
+      DTS:ObjectName="ITMPL5CG2023VDC\IDH.test 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ITMPL5CG2023VDC\IDH;Initial Catalog=test;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-CompanyTransform-{6A75103B-8113-4D23-B173-21B03F8EE1C9}ITMPL5CG2023VDC\IDH.test 1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[JAKUB\LOCAL.NycTaxi]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{D2C54B64-901E-4D9E-A0CF-2D69445F8AA5}"
@@ -512,7 +548,7 @@ WHERE VendorID IS NOT NULL;</property>
         <NodeLayout
           Size="204.8,41.6"
           Id="Package\Company Data Flow Task"
-          TopLeft="185,66" />
+          TopLeft="186.666666575604,67.7333333212799" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
