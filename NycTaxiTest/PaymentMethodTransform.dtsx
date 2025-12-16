@@ -1,43 +1,31 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="11/25/2025 5:25:57 PM"
+  DTS:CreationDate="12/14/2025 8:53:09 PM"
   DTS:CreationName="Microsoft.Package"
-  DTS:CreatorComputerName="JAKUB"
-  DTS:CreatorName="JAKUB\jakmi"
-  DTS:DTSID="{FE07D4AE-4919-4A12-BB6B-3951AE7524EC}"
+  DTS:CreatorComputerName="ARTURO"
+  DTS:CreatorName="ARTURO\Arturo"
+  DTS:DTSID="{CA638861-8BAC-4CF4-A670-C562B3FBC269}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1008.3"
   DTS:LocaleID="1045"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="PaymentMethodTransform"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{8D23D7FC-D174-4793-BD82-6DFD3283B106}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{FCFE8DA6-A869-4D19-BAED-AF6EA2CF3B64}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{0F66C6AA-354B-4B84-9AAE-E1DB424C1AD6}"
+      DTS:DTSID="{8BA9BA90-2C7D-4EA0-BAC3-4F6222C2D524}"
       DTS:ObjectName="ARTURO\MARTYNA.NycTaxi">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ARTURO\MARTYNA;Initial Catalog=NycTaxi;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{0F66C6AA-354B-4B84-9AAE-E1DB424C1AD6}ARTURO\MARTYNA.NycTaxi;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[JAKUB\LOCAL.NycTaxi]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{E5ABE6E3-3BFE-4DF2-99CA-42239A71E4E9}"
-      DTS:ObjectName="JAKUB\LOCAL.NycTaxi">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=Arturo\MARTYNA;Initial Catalog=NycTaxi;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{E5ABE6E3-3BFE-4DF2-99CA-42239A71E4E9}JAKUB\LOCAL.NycTaxi;" />
+          DTS:ConnectionString="Data Source=Arturo\MARTYNA;Initial Catalog=NycTaxi;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-PaymentMethodTransform-{8BA9BA90-2C7D-4EA0-BAC3-4F6222C2D524}ARTURO\MARTYNA.NycTaxi;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -47,11 +35,10 @@
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{DA980FE9-1286-41EF-BEA8-A694C7D6C5A6}"
+      DTS:DTSID="{79C801C1-41A4-4CDA-9916-0EA19DD80BD3}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      DTS:ObjectName="Data Flow Task">
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
@@ -73,7 +60,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Route]</property>
+                  name="OpenRowset">[dbo].[PaymentMethod]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -130,13 +117,11 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RouteLength]"
-                      cachedDataType="numeric"
-                      cachedName="RouteLength"
-                      cachedPrecision="10"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RouteLength]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RouteLength]" />
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Type]"
+                      cachedDataType="i4"
+                      cachedName="Type"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Type]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -145,11 +130,9 @@
                       dataType="i4"
                       name="Id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RouteLength]"
-                      dataType="numeric"
-                      name="RouteLength"
-                      precision="10"
-                      scale="2" />
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      dataType="i4"
+                      name="Type" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -194,7 +177,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
+                  name="OpenRowset">[dbo].[PaymentMethod]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -203,7 +186,10 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT trip_distance AS RouteLength FROM dbo.staging_nyctaxi</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT
+    payment_type AS [Type]
+FROM dbo.Staging_NYCTaxi
+WHERE payment_type IS NOT NULL;</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -240,25 +226,21 @@
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RouteLength]"
-                      dataType="numeric"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Type]"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RouteLength]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RouteLength]"
-                      name="RouteLength"
-                      precision="10"
-                      scale="2"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Type]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Type]"
+                      name="Type"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RouteLength]"
-                      dataType="numeric"
-                      name="RouteLength"
-                      precision="10"
-                      scale="2" />
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Type]"
+                      dataType="i4"
+                      name="Type" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -267,12 +249,10 @@
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RouteLength]"
-                      dataType="numeric"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RouteLength]"
-                      name="RouteLength"
-                      precision="10"
-                      scale="2" />
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Type]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Type]"
+                      name="Type" />
                     <outputColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -315,9 +295,9 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="155.2,41.6"
+          Size="150.4,41.6"
           Id="Package\Data Flow Task"
-          TopLeft="173,79" />
+          TopLeft="134.666659609311,88.6999994214376" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -327,39 +307,39 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="156.8,41.6"
-          Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="158.500001502534,67.6000004339218" />
-        <NodeLayout
           Size="171.2,41.6"
           Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="249.166653052801,149.933332290716" />
+          TopLeft="241.999996393919,169.999997466803" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="101.999998480082,67.9999989867211" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="236.900001502534,109.200000433922">
+          TopLeft="177.999998480082,109.599998986721">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="97.8666515502669,40.7333318567939"
+              EndConnector="149.599997913837,60.3999984800816"
               Start="0,0"
-              End="97.8666515502669,33.2333318567939">
+              End="149.599997913837,52.8999984800816">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.366665928397" />
+                    End="0,26.1999992400408" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.366665928397"
-                    Point2="0,20.366665928397"
-                    Point3="4,20.366665928397" />
+                    Point1="0,26.1999992400408"
+                    Point2="0,30.1999992400408"
+                    Point3="4,30.1999992400408" />
                   <mssgle:LineSegment
-                    End="93.8666515502669,20.366665928397" />
+                    End="145.599997913837,30.1999992400408" />
                   <mssgle:CubicBezierSegment
-                    Point1="93.8666515502669,20.366665928397"
-                    Point2="97.8666515502669,20.366665928397"
-                    Point3="97.8666515502669,24.366665928397" />
+                    Point1="145.599997913837,30.1999992400408"
+                    Point2="149.599997913837,30.1999992400408"
+                    Point3="149.599997913837,34.1999992400408" />
                   <mssgle:LineSegment
-                    End="97.8666515502669,33.2333318567939" />
+                    End="149.599997913837,52.8999984800816" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -372,15 +352,20 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Data Flow Task\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
