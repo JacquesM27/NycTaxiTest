@@ -1,0 +1,90 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="e674770a-3037-400f-8894-b49ad4b2f1c9" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>NycTaxi_DSV</ID>
+  <Name>NycTaxi_DSV</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Nyc Taxi</DataSourceID>
+  <Schema>
+    <xs:schema id="NycTaxi_DSV" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="NycTaxi_DSV" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="9bcc370b-b96d-4fe2-93b8-4fdd9cca432e">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_Company" msprop:DbTableName="Company" msprop:FriendlyName="Company" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="e88a8b27-0154-42af-bd56-18a3fba05b77">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="Id" msprop:DbColumnName="Id" msprop:design-time-name="8b4ff441-9a7b-4f49-85f6-a8f9e8815201" type="xs:int" />
+                  <xs:element name="CompanyNumber" msprop:FriendlyName="CompanyNumber" msprop:DbColumnName="CompanyNumber" msprop:design-time-name="6d341d41-6768-4956-a3e5-c30e0f2e6394" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Route" msprop:DbTableName="Route" msprop:FriendlyName="Route" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="7112c2f4-d989-4b38-a267-b16270e3a0bf">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="Id" msprop:DbColumnName="Id" msprop:design-time-name="9fba7cc4-e46f-4533-b00a-10682bbfa216" type="xs:int" />
+                  <xs:element name="RouteLength" msprop:FriendlyName="RouteLength" msprop:DbColumnName="RouteLength" msprop:design-time-name="3903f8fe-fcbb-4589-aea4-9c0659666496" type="xs:decimal" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_PaymentMethod" msprop:DbTableName="PaymentMethod" msprop:FriendlyName="PaymentMethod" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="6a21d190-db26-44c1-a6eb-b7a8520c9520">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="Id" msprop:DbColumnName="Id" msprop:design-time-name="cb729f06-7c12-49b7-85e6-0e45a1aa0e3c" type="xs:int" />
+                  <xs:element name="Type" msprop:FriendlyName="Type" msprop:DbColumnName="Type" msprop:design-time-name="b57c6c8e-b5f0-4a0b-9a82-08d3ed95327d" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Company" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="dbo_Route_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Route" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="dbo_PaymentMethod_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_PaymentMethod" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+      </xs:element>
+    </xs:schema>
+    <NycTaxi_DSV xmlns="" />
+  </Schema>
+</DataSourceView>

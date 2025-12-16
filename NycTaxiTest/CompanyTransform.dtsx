@@ -1,25 +1,37 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/15/2025 5:47:08 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="JAKUB"
   DTS:CreatorName="JAKUB\jakmi"
-  DTS:DTSID="{EAC47A2E-4471-471C-A453-3087A14FB9B1}"
+  DTS:DTSID="{001A9449-208D-4986-BBBC-250F53DBBF09}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1008.3"
   DTS:LocaleID="1045"
   DTS:ObjectName="CompanyTransform"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{95A56759-1C17-4780-BB9F-15C254DF3A5E}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{65C30AEB-02F8-4FE1-BF0C-76CE88BB68A0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3B1BABF1-F4E1-40A4-A7F1-19CC5BB79D5C}"
+      DTS:ObjectName="ARTURO\MARTYNA.NycTaxi">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ARTURO\MARTYNA;Initial Catalog=NycTaxi;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-CompanyTransform-{3B1BABF1-F4E1-40A4-A7F1-19CC5BB79D5C}ARTURO\MARTYNA.NycTaxi;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[flat_file_nyc_25_01]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{65C2CCF4-2393-4566-8AAF-D87F040747DC}"
+      DTS:DTSID="{BE662459-E144-4605-BBEC-73D0176052A2}"
       DTS:ObjectName="flat_file_nyc_25_01">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -39,7 +51,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="VendorID"
-              DTS:DTSID="{4A63B990-59F7-456B-8600-EF0DBB40091C}"
+              DTS:DTSID="{9AACF110-2B2F-4DD8-879F-B38B45CE4C22}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +60,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="tpep_pickup_datetime"
-              DTS:DTSID="{2937908B-AAE4-42EE-A1BD-0FBBB0FD3330}"
+              DTS:DTSID="{F1B00F43-6414-475C-84FC-9E2EA847B30D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +69,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="tpep_dropoff_datetime"
-              DTS:DTSID="{1AF2955C-B1DC-42D2-ADB6-C01E396D60E8}"
+              DTS:DTSID="{858FA77F-8C8E-4437-8D0B-E83A12325210}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +78,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="passenger_count"
-              DTS:DTSID="{8F1F4393-CFDB-4750-8964-4860C31E878B}"
+              DTS:DTSID="{2BF81BBC-4FBE-428F-8636-B93080E83268}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,7 +87,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="trip_distance"
-              DTS:DTSID="{26CB0AF0-E343-413A-BA30-D3A8B194611D}"
+              DTS:DTSID="{978317A1-E6BB-4FDD-9816-C387B7BE0263}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -84,7 +96,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="pickup_longitude"
-              DTS:DTSID="{DB5729C2-2C88-4FF5-B022-C73E5E472B24}"
+              DTS:DTSID="{F506B64C-01B0-41AA-8568-10A5C81681C4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -93,7 +105,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="pickup_latitude"
-              DTS:DTSID="{264B3202-E1CF-4F15-8181-611386849F6D}"
+              DTS:DTSID="{FA971441-0D84-48A7-B251-0EAC096C1730}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -102,7 +114,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RateCodeID"
-              DTS:DTSID="{94125902-C479-4D68-B161-1BC484FA0058}"
+              DTS:DTSID="{7342DDF4-67F8-4558-9F50-9517E2EB1A5F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -111,7 +123,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="store_and_fwd_flag"
-              DTS:DTSID="{D0F3763E-CB38-4C6F-A008-E7A8CCE85DD3}"
+              DTS:DTSID="{9048CCB4-93D0-48FF-93DB-D0FEF7ECC94C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -120,7 +132,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="dropoff_longitude"
-              DTS:DTSID="{7228CFF6-4C12-4528-9CF9-9F4B08A6E4F8}"
+              DTS:DTSID="{06D1B94B-16C7-4420-A411-2BF41EC8F5BE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -129,7 +141,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="dropoff_latitude"
-              DTS:DTSID="{18EEE948-BA2E-426C-865E-7626F2E959AD}"
+              DTS:DTSID="{29B44C4B-3E00-404C-A115-208EA0EEEC61}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -138,7 +150,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="payment_type"
-              DTS:DTSID="{1A4DCEAB-68C0-4524-BAA4-750710E19C95}"
+              DTS:DTSID="{354B1C47-57C0-4863-81B6-65D71D6644AE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -147,7 +159,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="fare_amount"
-              DTS:DTSID="{98EE920C-3EC9-49C7-A387-8CB42350DCB2}"
+              DTS:DTSID="{273B9F90-E6FF-4BED-94CF-9384CF9523D5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -156,7 +168,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="extra"
-              DTS:DTSID="{17CBF885-7325-4A08-A260-1451AF6FBF4C}"
+              DTS:DTSID="{432F530F-F57F-4F85-879A-5C92CBE1719A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -165,7 +177,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="mta_tax"
-              DTS:DTSID="{B2684EB3-1DC0-4715-8491-FBD4222929A1}"
+              DTS:DTSID="{92259846-0C99-436D-8BA0-E23FDD6B36BB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -174,7 +186,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="tip_amount"
-              DTS:DTSID="{1FDA11A5-CFD7-40F0-9AD6-034AB936AB07}"
+              DTS:DTSID="{83772B8D-E008-4FA1-8A02-FD7AD3812C53}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -183,7 +195,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="tolls_amount"
-              DTS:DTSID="{1CB5CEA4-B42D-4838-A473-5B9D8CDDC055}"
+              DTS:DTSID="{456109DA-6B12-4945-8F2B-313F99C1BE03}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -192,7 +204,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="improvement_surcharge"
-              DTS:DTSID="{B3BC7360-29AE-43A0-855A-CBF4F5F2F095}"
+              DTS:DTSID="{068779DF-1C09-40F1-B7ED-ECC3A93B7C04}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -201,7 +213,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="total_amount"
-              DTS:DTSID="{4A23CCB0-9380-4801-8DC2-40577881DBBA}"
+              DTS:DTSID="{D85B458D-4880-459D-BCBF-D2C8E1EBD23E}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -210,49 +222,49 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.NycTaxi]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{095F3D99-513C-47D4-A36B-1B2949A3CAAC}"
+      DTS:DTSID="{8BE2A8E3-70F1-4F4F-85BA-DCFECAACFEE6}"
       DTS:ObjectName="ITMPL5CG2023VDC\IDH.NycTaxi">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ITMPL5CG2023VDC\IDH;Initial Catalog=NycTaxi;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-CompanyTransform-{095F3D99-513C-47D4-A36B-1B2949A3CAAC}ITMPL5CG2023VDC\IDH.NycTaxi;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ITMPL5CG2023VDC\IDH;Initial Catalog=NycTaxi;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-CompanyTransform-{8BE2A8E3-70F1-4F4F-85BA-DCFECAACFEE6}ITMPL5CG2023VDC\IDH.NycTaxi;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.test]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{E9BE3131-D6CE-43F5-AA9B-860A5C2A450B}"
+      DTS:DTSID="{A9A42748-4372-4F40-81B2-1B9B3DA55453}"
       DTS:ObjectName="ITMPL5CG2023VDC\IDH.test">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ITMPL5CG2023VDC\IDH;Initial Catalog=test;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-CompanyTransform-{E9BE3131-D6CE-43F5-AA9B-860A5C2A450B}ITMPL5CG2023VDC\IDH.test;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ITMPL5CG2023VDC\IDH;Initial Catalog=test;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-CompanyTransform-{A9A42748-4372-4F40-81B2-1B9B3DA55453}ITMPL5CG2023VDC\IDH.test;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.test 1]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{6A75103B-8113-4D23-B173-21B03F8EE1C9}"
+      DTS:DTSID="{E8568061-F18D-4ACA-8CD6-D6E7A6D53AA2}"
       DTS:ObjectName="ITMPL5CG2023VDC\IDH.test 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ITMPL5CG2023VDC\IDH;Initial Catalog=test;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-CompanyTransform-{6A75103B-8113-4D23-B173-21B03F8EE1C9}ITMPL5CG2023VDC\IDH.test 1;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ITMPL5CG2023VDC\IDH;Initial Catalog=test;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-CompanyTransform-{E8568061-F18D-4ACA-8CD6-D6E7A6D53AA2}ITMPL5CG2023VDC\IDH.test 1;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[JAKUB\LOCAL.NycTaxi]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{D2C54B64-901E-4D9E-A0CF-2D69445F8AA5}"
+      DTS:DTSID="{6467C725-5FB7-414C-8DAF-42444718B516}"
       DTS:ObjectName="JAKUB\LOCAL.NycTaxi">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=JAKUB\LOCAL;Initial Catalog=NycTaxi;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{D2C54B64-901E-4D9E-A0CF-2D69445F8AA5}JAKUB\LOCAL.NycTaxi;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=Arturo\MARTYNA;Initial Catalog=NycTaxi;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{6467C725-5FB7-414C-8DAF-42444718B516}JAKUB\LOCAL.NycTaxi;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -260,7 +272,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="11"
-      DTS:DTSID="{E602E1E6-A1B7-4380-8FAF-B9B1C2CBF64A}"
+      DTS:DTSID="{E5FDA56B-B267-44F4-ADBD-D3A352D49742}"
       DTS:ObjectName="LoadNycTaxiData_DataFlowTask">
       <DTS:Property
         DTS:DataType="11"
@@ -273,7 +285,7 @@
       DTS:refId="Package\Company Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{4B3D12C9-646F-4D2D-BEFF-0D78C9D713DC}"
+      DTS:DTSID="{2F0C7EE2-F653-4A85-B38F-F77F408C4340}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Company Data Flow Task"
@@ -342,8 +354,8 @@
               <connections>
                 <connection
                   refId="Package\Company Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.NycTaxi]"
-                  connectionManagerRefId="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.NycTaxi]"
+                  connectionManagerID="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
+                  connectionManagerRefId="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -425,7 +437,10 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT VendorId AS CompanyNumber FROM dbo.Staging_NYCTaxi</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT
+    VendorID AS CompanyNumber
+FROM dbo.Staging_NYCTaxi
+WHERE VendorID IS NOT NULL;</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -451,8 +466,8 @@
               <connections>
                 <connection
                   refId="Package\Company Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.NycTaxi]"
-                  connectionManagerRefId="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.NycTaxi]"
+                  connectionManagerID="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
+                  connectionManagerRefId="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
