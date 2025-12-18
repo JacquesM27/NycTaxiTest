@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.3.11206.111 d18.3
+VisualStudioVersion = 18.3.11206.111
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "NycTaxiTest", "NycTaxiTest\NycTaxiTest.dtproj", "{1A2258F4-6B9E-060C-77DD-1BA1410E824F}"
 EndProject
 Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "NycTaxi", "NycTaxi\NycTaxi.dwproj", "{1094D461-B828-3D47-AD64-E2D6B008CD48}"
+EndProject
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "NycTaxiETL", "NycTaxiETL\NycTaxiETL.dtproj", "{F56C9124-C768-FA3B-7A3D-DE69BD3DB430}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +19,8 @@ Global
 		{1094D461-B828-3D47-AD64-E2D6B008CD48}.Development|Default.ActiveCfg = Development
 		{1094D461-B828-3D47-AD64-E2D6B008CD48}.Development|Default.Build.0 = Development
 		{1094D461-B828-3D47-AD64-E2D6B008CD48}.Development|Default.Deploy.0 = Development
+		{F56C9124-C768-FA3B-7A3D-DE69BD3DB430}.Development|Default.ActiveCfg = Development
+		{F56C9124-C768-FA3B-7A3D-DE69BD3DB430}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
