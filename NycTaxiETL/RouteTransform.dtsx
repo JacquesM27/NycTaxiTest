@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/25/2025 5:25:57 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{76F35D6C-37E5-46C9-AC8E-0D3D814F4A28}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{024841D9-84EA-488B-B2B6-2DE750308EC5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,6 +26,30 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=ARTURO\MARTYNA;Initial Catalog=NycTaxi;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{FB63ECA7-0671-446A-B958-DC1A54DC531C}ARTURO\MARTYNA.NycTaxi;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JAKUB\IDH2022.NycTaxi]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9420C726-E29D-4173-A697-F9B5A367CDFB}"
+      DTS:ObjectName="JAKUB\IDH2022.NycTaxi">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=JAKUB\IDH2022;Initial Catalog=NycTaxi;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{9420C726-E29D-4173-A697-F9B5A367CDFB}JAKUB\IDH2022.NycTaxi;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JAKUB\IDH2022.NycTaxi 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{738C3675-F1B8-4EDD-BEEB-AB2911FD2640}"
+      DTS:ObjectName="JAKUB\IDH2022.NycTaxi 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=JAKUB\IDH2022;Initial Catalog=NycTaxi;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{738C3675-F1B8-4EDD-BEEB-AB2911FD2640}JAKUB\IDH2022.NycTaxi 1;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -116,8 +140,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
-                  connectionManagerRefId="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
+                  connectionManagerID="Package.ConnectionManagers[JAKUB\IDH2022.NycTaxi 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[JAKUB\IDH2022.NycTaxi 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -229,8 +253,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
-                  connectionManagerRefId="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
+                  connectionManagerID="Package.ConnectionManagers[JAKUB\IDH2022.NycTaxi]"
+                  connectionManagerRefId="Package.ConnectionManagers[JAKUB\IDH2022.NycTaxi]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -315,7 +339,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="155.2,41.6"
+          Size="155,42"
           Id="Package\Data Flow Task"
           TopLeft="173,79" />
       </GraphLayout>
@@ -327,13 +351,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="156.8,41.6"
-          Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="158.500001502534,67.6000004339218" />
-        <NodeLayout
-          Size="171.2,41.6"
+          Size="171,42"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="249.166653052801,149.933332290716" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="158.500001502534,67.6000004339218" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="236.900001502534,109.200000433922">
@@ -372,14 +396,6 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
@@ -389,6 +405,14 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

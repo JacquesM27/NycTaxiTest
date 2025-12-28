@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/15/2025 5:47:08 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="CompanyTransform"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{92F7D482-7628-41A5-A2A3-ECA6A83621CA}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{1D5EADDD-9D63-4186-9C7F-19A14FCC3F43}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -256,6 +256,30 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JAKUB\IDH2022.NycTaxi]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E4A61E80-445F-4C0A-BC96-3B328EFFF34F}"
+      DTS:ObjectName="JAKUB\IDH2022.NycTaxi">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=JAKUB\IDH2022;Initial Catalog=NycTaxi;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-CompanyTransform-{E4A61E80-445F-4C0A-BC96-3B328EFFF34F}JAKUB\IDH2022.NycTaxi;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JAKUB\IDH2022.NycTaxi 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8AA906FB-CA1B-456B-B1C0-D6FDA60C3352}"
+      DTS:ObjectName="JAKUB\IDH2022.NycTaxi 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=JAKUB\IDH2022;Initial Catalog=NycTaxi;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-CompanyTransform-{8AA906FB-CA1B-456B-B1C0-D6FDA60C3352}JAKUB\IDH2022.NycTaxi 1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[JAKUB\LOCAL.NycTaxi]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{525E9092-134B-4E91-A6D4-2C28CFA32086}"
@@ -354,8 +378,8 @@
               <connections>
                 <connection
                   refId="Package\Company Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
-                  connectionManagerRefId="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
+                  connectionManagerID="Package.ConnectionManagers[JAKUB\IDH2022.NycTaxi 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[JAKUB\IDH2022.NycTaxi 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -466,8 +490,8 @@ WHERE VendorID IS NOT NULL;</property>
               <connections>
                 <connection
                   refId="Package\Company Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
-                  connectionManagerRefId="Package.ConnectionManagers[ARTURO\MARTYNA.NycTaxi]"
+                  connectionManagerID="Package.ConnectionManagers[JAKUB\IDH2022.NycTaxi]"
+                  connectionManagerRefId="Package.ConnectionManagers[JAKUB\IDH2022.NycTaxi]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -546,7 +570,7 @@ WHERE VendorID IS NOT NULL;</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="204.8,41.6"
+          Size="205,42"
           Id="Package\Company Data Flow Task"
           TopLeft="186.666666575604,67.7333333212799" />
       </GraphLayout>
@@ -558,11 +582,11 @@ WHERE VendorID IS NOT NULL;</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="176.8,41.6"
+          Size="177,42"
           Id="Package\Company Data Flow Task\OLE DB Destination"
           TopLeft="162,164" />
         <NodeLayout
-          Size="156.8,41.6"
+          Size="157,42"
           Id="Package\Company Data Flow Task\OLE DB Source"
           TopLeft="169,62" />
         <EdgeLayout

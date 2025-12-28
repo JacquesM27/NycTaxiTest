@@ -7,19 +7,44 @@ Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "NycTaxi", "NycTaxi\NycTaxi.
 EndProject
 Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "NycTaxiETL", "NycTaxiETL\NycTaxiETL.dtproj", "{F56C9124-C768-FA3B-7A3D-DE69BD3DB430}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csv_loader", "csv_loader", "{C276D410-CE0F-489B-9593-0F7A03A00783}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nyc_test", "csv_loader\nyc_test\nyc_test.csproj", "{FBAA1910-54C9-AB7D-B2CF-FE6901DB52AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Development|Default = Development|Default
+		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1094D461-B828-3D47-AD64-E2D6B008CD48}.Development|Default.ActiveCfg = Development
-		{1094D461-B828-3D47-AD64-E2D6B008CD48}.Development|Default.Build.0 = Development
-		{1094D461-B828-3D47-AD64-E2D6B008CD48}.Development|Default.Deploy.0 = Development
-		{F56C9124-C768-FA3B-7A3D-DE69BD3DB430}.Development|Default.ActiveCfg = Development
-		{F56C9124-C768-FA3B-7A3D-DE69BD3DB430}.Development|Default.Build.0 = Development
+		{1094D461-B828-3D47-AD64-E2D6B008CD48}.Debug|Any CPU.ActiveCfg = Development
+		{1094D461-B828-3D47-AD64-E2D6B008CD48}.Debug|Any CPU.Build.0 = Development
+		{1094D461-B828-3D47-AD64-E2D6B008CD48}.Debug|Any CPU.Deploy.0 = Development
+		{1094D461-B828-3D47-AD64-E2D6B008CD48}.Development|Any CPU.ActiveCfg = Development
+		{1094D461-B828-3D47-AD64-E2D6B008CD48}.Development|Any CPU.Build.0 = Development
+		{1094D461-B828-3D47-AD64-E2D6B008CD48}.Development|Any CPU.Deploy.0 = Development
+		{1094D461-B828-3D47-AD64-E2D6B008CD48}.Release|Any CPU.ActiveCfg = Development
+		{1094D461-B828-3D47-AD64-E2D6B008CD48}.Release|Any CPU.Build.0 = Development
+		{1094D461-B828-3D47-AD64-E2D6B008CD48}.Release|Any CPU.Deploy.0 = Development
+		{F56C9124-C768-FA3B-7A3D-DE69BD3DB430}.Debug|Any CPU.ActiveCfg = Development
+		{F56C9124-C768-FA3B-7A3D-DE69BD3DB430}.Debug|Any CPU.Build.0 = Development
+		{F56C9124-C768-FA3B-7A3D-DE69BD3DB430}.Development|Any CPU.ActiveCfg = Development
+		{F56C9124-C768-FA3B-7A3D-DE69BD3DB430}.Development|Any CPU.Build.0 = Development
+		{F56C9124-C768-FA3B-7A3D-DE69BD3DB430}.Release|Any CPU.ActiveCfg = Development
+		{F56C9124-C768-FA3B-7A3D-DE69BD3DB430}.Release|Any CPU.Build.0 = Development
+		{FBAA1910-54C9-AB7D-B2CF-FE6901DB52AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBAA1910-54C9-AB7D-B2CF-FE6901DB52AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBAA1910-54C9-AB7D-B2CF-FE6901DB52AF}.Development|Any CPU.ActiveCfg = Release|Any CPU
+		{FBAA1910-54C9-AB7D-B2CF-FE6901DB52AF}.Development|Any CPU.Build.0 = Release|Any CPU
+		{FBAA1910-54C9-AB7D-B2CF-FE6901DB52AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBAA1910-54C9-AB7D-B2CF-FE6901DB52AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FBAA1910-54C9-AB7D-B2CF-FE6901DB52AF} = {C276D410-CE0F-489B-9593-0F7A03A00783}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {912CD0D7-FF33-4134-8BA2-F594A594544D}

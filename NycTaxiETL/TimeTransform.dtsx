@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/28/2025 8:38:29 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{F43720B6-E162-482B-9D38-923A41C1DB4C}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{29E6DB6B-C906-4CE8-81BD-06CC8BAD4AF1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,6 +26,30 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=ITMPL5CG2023VDC\IDH;Initial Catalog=NycTaxi;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{AFDF2968-4443-4C13-A1A9-9FD7B14332B1}ITMPL5CG2023VDC\IDH.NycTaxi;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JAKUB\IDH2022.NycTaxi]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4968D532-148A-4C6D-A91E-AFE286809F17}"
+      DTS:ObjectName="JAKUB\IDH2022.NycTaxi">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=JAKUB\IDH2022;Initial Catalog=NycTaxi;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{4968D532-148A-4C6D-A91E-AFE286809F17}JAKUB\IDH2022.NycTaxi;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JAKUB\IDH2022.NycTaxi 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{EF91BBC1-F297-4F5C-A9E8-B2848807FB42}"
+      DTS:ObjectName="JAKUB\IDH2022.NycTaxi 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=JAKUB\IDH2022;Initial Catalog=NycTaxi;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{EF91BBC1-F297-4F5C-A9E8-B2848807FB42}JAKUB\IDH2022.NycTaxi 1;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -104,8 +128,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.NycTaxi]"
-                  connectionManagerRefId="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.NycTaxi]"
+                  connectionManagerID="Package.ConnectionManagers[JAKUB\IDH2022.NycTaxi 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[JAKUB\IDH2022.NycTaxi 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -118,22 +142,22 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Hours]"
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Hour]"
                       cachedDataType="i4"
-                      cachedName="Hours"
+                      cachedName="Hour"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Hour]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Hours]" />
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Hour]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Minutes]"
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Minute]"
                       cachedDataType="i4"
-                      cachedName="Minutes"
+                      cachedName="Minute"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Minute]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Minutes]" />
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Minute]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TimeOfTheDay]"
                       cachedCodepage="1250"
                       cachedDataType="str"
-                      cachedLength="9"
+                      cachedLength="20"
                       cachedName="TimeOfTheDay"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TimeOfDay]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TimeOfTheDay]" />
@@ -154,7 +178,8 @@
                       name="Minute" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TimeOfDay]"
-                      dataType="wstr"
+                      codePage="1250"
+                      dataType="str"
                       length="20"
                       name="TimeOfDay" />
                   </externalMetadataColumns>
@@ -201,7 +226,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
+                  name="OpenRowset">[dbo].[time_view]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -211,15 +236,15 @@
                   description="The SQL command to be executed."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
-      [Hours]
-    , [Minutes]
+      [Hour]
+    , [Minute]
     , CAST(CASE 
-        WHEN [Hours] &gt;= 6 AND [Hours] &lt; 12
-        THEN N'Morning'
-        WHEN [Hours] &gt;= 12 AND [Hours] &lt; 20
-        THEN N'Afternoon'
-        ELSE N'Night'
-      END AS NVARCHAR(20)) AS [TimeOfTheDay]
+        WHEN [Hour] &gt;= 6 AND [Hour] &lt; 12
+        THEN 'Morning'
+        WHEN [Hour] &gt;= 12 AND [Hour] &lt; 20
+        THEN 'Afternoon'
+        ELSE 'Night'
+      END AS VARCHAR(20)) AS [TimeOfTheDay]
 FROM [dbo].[time_view]</property>
                 <property
                   dataType="System.String"
@@ -237,7 +262,7 @@ FROM [dbo].[time_view]</property>
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">2</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
@@ -246,8 +271,8 @@ FROM [dbo].[time_view]</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.NycTaxi]"
-                  connectionManagerRefId="Package.ConnectionManagers[ITMPL5CG2023VDC\IDH.NycTaxi]"
+                  connectionManagerID="Package.ConnectionManagers[JAKUB\IDH2022.NycTaxi]"
+                  connectionManagerRefId="Package.ConnectionManagers[JAKUB\IDH2022.NycTaxi]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -257,22 +282,22 @@ FROM [dbo].[time_view]</property>
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Hours]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Hour]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Hours]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Hours]"
-                      name="Hours"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Hour]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Hour]"
+                      name="Hour"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Minutes]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Minute]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Minutes]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Minutes]"
-                      name="Minutes"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Minute]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Minute]"
+                      name="Minute"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TimeOfTheDay]"
@@ -281,7 +306,7 @@ FROM [dbo].[time_view]</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TimeOfTheDay]"
-                      length="9"
+                      length="20"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TimeOfTheDay]"
                       name="TimeOfTheDay"
                       truncationRowDisposition="FailComponent" />
@@ -289,16 +314,17 @@ FROM [dbo].[time_view]</property>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Hours]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Hour]"
                       dataType="i4"
-                      name="Hours" />
+                      name="Hour" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Minutes]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Minute]"
                       dataType="i4"
-                      name="Minutes" />
+                      name="Minute" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TimeOfTheDay]"
-                      dataType="wstr"
+                      codePage="1250"
+                      dataType="str"
                       length="20"
                       name="TimeOfTheDay" />
                   </externalMetadataColumns>
@@ -309,18 +335,19 @@ FROM [dbo].[time_view]</property>
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Hours]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Hour]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Hours]"
-                      name="Hours" />
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Hour]"
+                      name="Hour" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Minutes]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Minute]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Minutes]"
-                      name="Minutes" />
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Minute]"
+                      name="Minute" />
                     <outputColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TimeOfTheDay]"
-                      dataType="wstr"
+                      codePage="1250"
+                      dataType="str"
                       length="20"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TimeOfTheDay]"
                       name="TimeOfTheDay" />
@@ -366,7 +393,7 @@ FROM [dbo].[time_view]</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Data Flow Task"
           TopLeft="452.499975276491,246.999998282393" />
       </GraphLayout>
@@ -378,11 +405,11 @@ FROM [dbo].[time_view]</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="152,41.6"
+          Size="152,42"
           Id="Package\Data Flow Task\OLE DB Source"
           TopLeft="60.9999990910291,47.9999992847443" />
         <NodeLayout
-          Size="171.2,41.6"
+          Size="171,42"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="43.9999993443488,223.99999666214" />
         <EdgeLayout
@@ -411,14 +438,6 @@ FROM [dbo].[time_view]</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
@@ -428,6 +447,19 @@ FROM [dbo].[time_view]</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
